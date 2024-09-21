@@ -1,0 +1,14 @@
+C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\bin\Debug\net8.0\studentNotas.exe
+C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\bin\Debug\net8.0\studentNotas.deps.json
+C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\bin\Debug\net8.0\studentNotas.runtimeconfig.json
+C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\bin\Debug\net8.0\studentNotas.dll
+C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\bin\Debug\net8.0\studentNotas.pdb
+C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\obj\Debug\net8.0\studentNotas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\obj\Debug\net8.0\studentNotas.AssemblyInfoInputs.cache
+C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\obj\Debug\net8.0\studentNotas.AssemblyInfo.cs
+C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\obj\Debug\net8.0\studentNotas.csproj.CoreCompileInputs.cache
+C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\obj\Debug\net8.0\studentNotas.dll
+C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\obj\Debug\net8.0\refint\studentNotas.dll
+C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\obj\Debug\net8.0\studentNotas.pdb
+C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\obj\Debug\net8.0\studentNotas.genruntimeconfig.cache
+C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\obj\Debug\net8.0\ref\studentNotas.dll
