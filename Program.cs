@@ -22,7 +22,7 @@ int[] studentScores = new int[10];
 // Variável para atribuir uma letra, exemplo: A, B ou C
 string currentStudentLetterGrade = "";
 
-Console.WriteLine("Student\t\tExam score\tOverall Grade\t Exta Credit");
+Console.WriteLine("Student\t\tExam score\tOverall Grade\tExta Credit");
 
 // Loop foreach, percorre a matriz de estudantes
 foreach (string name in studentNames)
@@ -61,6 +61,8 @@ foreach (string name in studentNames)
     int sumAssignmentScoresOver = 0;
     int sumAssignmentScores = 0;
     decimal sumAssignmentScoresNotExtra = 0;
+    int sumAssignmentScoresNotExtraInt = 0;
+    decimal extraCredit = 0;
 
     // Inicializa a média atual do aluno
     decimal currentStudentGrade = 0;
@@ -81,10 +83,15 @@ foreach (string name in studentNames)
             // Adiciona os pontos de crédito extra - bônus igual a 10% da pontuação do exame
             sumAssignmentScoresOver += score / 10;
             sumAssignmentScoresNotExtra = (decimal)sumAssignmentScores / 5;
+            sumAssignmentScoresNotExtraInt = sumAssignmentScores / 5;
+            
     }
 
     // Calcula a média do aluno
     currentStudentGrade = (decimal)(sumAssignmentScoresOver+sumAssignmentScores) / examAssignments;
+
+    //GAMBI DAS GAMBI
+    extraCredit = currentStudentGrade - sumAssignmentScoresNotExtra;
 
     // Atribui a letra correspondente à nota com base na média
     if (currentStudentGrade >= 97)
@@ -126,7 +133,7 @@ foreach (string name in studentNames)
         currentStudentLetterGrade = "F";
 
     // Exibe o nome do aluno, a média e a letra correspondente à nota
-    Console.WriteLine($"{currentStudent}\t\t{sumAssignmentScoresNotExtra}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}");
+    Console.WriteLine($"{currentStudent}\t\t{sumAssignmentScoresNotExtra}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}\t{sumAssignmentScoresNotExtraInt}({extraCredit})");
 }
 
 Console.WriteLine("Press the Enter key to continue");
