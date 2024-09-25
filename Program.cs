@@ -1,91 +1,131 @@
 ﻿using System;
-using System.Reflection;
 
-// Inicializa o número de exames
-int exam = 5;
+// Inicializa o número de exames 
+int examAssignments = 5;  // número de exames
 
-// Inicializa as variáveis para armazenar as somas das notas dos alunos
-decimal sophiaScore = 0;
-decimal andrewScore = 0;
-decimal emmaScore = 0;
-decimal loganScore = 0;
+// Matriz de pontuação
+int[] sophiaScores = new int[] { 90, 86, 87, 98, 100, 94, 90 };
+int[] andrewScores = new int[] { 92, 89, 81, 96, 90, 89 };
+int[] emmaScores = new int[] { 90, 85, 87, 98, 68, 89, 89, 89 };
+int[] loganScores = new int[] { 90, 95, 87, 88, 96, 96 };
+int[] beckyScores = new int[] { 92, 91, 90, 91, 92, 92, 92 };
+int[] chrisScores = new int[] { 84, 86, 88, 90, 92, 94, 96, 98 };
+int[] ericScores = new int[] { 80, 90, 100, 80, 90, 100, 80, 90 };
+int[] gregorScores = new int[] { 91, 91, 91, 91, 91, 91, 91 };
 
-// Declaração dos nomes dos alunos
-string[] studentNames = new string[] { "Sophia", "Andrew", "Emma", "Logan" };
+// Matriz de nomes dos alunos
+string[] studentNames = new string[] { "Sophia", "Andrew", "Emma", "Logan", "Becky", "Chris", "Eric", "Gregor" };
 
-// Declaração das notas de cada aluno
-int[] sophia = new int[] { 90, 86, 87, 98, 100 };
-int[] andrew = new int[] { 92, 89, 81, 96, 90 };
-int[] emma = new int[] { 90, 85, 87, 98, 68 };
-int[] logan = new int[] { 90, 95, 87, 88, 96 };
+// Matriz para armazenar as notas do aluno e em seguida somar no loop foreach
+int[] studentScores = new int[10];
 
-// armazenar as médias finais dos alunos
-decimal[] totalScore = new decimal[4];
+// Variável para atribuir uma letra, exemplo: A, B ou C
+string currentStudentLetterGrade = "";
 
-// Calcula as somas das notas e as médias
-foreach (string i in studentNames) {
-    if (i == "Sophia") {
-        foreach (int n in sophia) {
-            sophiaScore += n;
-            totalScore[0] = (decimal)sophiaScore / exam; // Calcula média
-        }
-    }
-    else if (i == "Andrew") {
-        foreach (int n in andrew) {
-            andrewScore += n;
-            totalScore[1] = (decimal)andrewScore / exam; // Calcula média
-        }
-    }
-    else if (i == "Emma") {
-        foreach (int n in emma) {
-            emmaScore += n;
-            totalScore[2] = (decimal)emmaScore / exam; // Calcula média
-        }
-    }
-    else if (i == "Logan") {
-        foreach (int n in logan) {
-            loganScore += n;
-            totalScore[3] = (decimal)loganScore / exam; // Calcula média
-        }
-    }
-}
+Console.WriteLine("Student\t\tGrade\n");
+Console.WriteLine("__________________________________");
 
-// Impressão do cabeçalho
-Console.WriteLine("Student         Grade");
-Console.WriteLine("");
+// Loop foreach, percorre a matriz de estudantes
+foreach (string name in studentNames)
+{
+    string currentStudent = name;
 
-// Impressão das médias e notas finais dos alunos
-foreach (string n in studentNames) {
-    int index = Array.IndexOf(studentNames, n);
-    
-    // Exibe o nome do aluno e sua média formatada
-    Console.Write($"{n}\t\t{totalScore[index]:F1}\t");
-    
-    // Determina a nota correspondente com base na média
-    if (totalScore[index] >= 97)
-        Console.WriteLine("A+");
-    else if (totalScore[index] >= 93 && totalScore[index] < 97)
-        Console.WriteLine("A");
-    else if (totalScore[index] >= 90 && totalScore[index] < 93)
-        Console.WriteLine("A-");
-    else if (totalScore[index] >= 87 && totalScore[index] < 90)
-        Console.WriteLine("B+");
-    else if (totalScore[index] >= 83 && totalScore[index] < 87)
-        Console.WriteLine("B");
-    else if (totalScore[index] >= 80 && totalScore[index] < 83)
-        Console.WriteLine("B-");
-    else if (totalScore[index] >= 77 && totalScore[index] < 80)
-        Console.WriteLine("C+");
-    else if (totalScore[index] >= 73 && totalScore[index] < 77)
-        Console.WriteLine("C");
-    else if (totalScore[index] >= 70 && totalScore[index] < 73)
-        Console.WriteLine("C-");
-    else if (totalScore[index] >= 67 && totalScore[index] < 70)
-        Console.WriteLine("D+");
+    // Atribui a matriz de pontuações correta com base no nome do aluno
+    if (currentStudent == "Sophia")
+        studentScores = sophiaScores;
+
+    else if (currentStudent == "Andrew")
+        studentScores = andrewScores;
+
+    else if (currentStudent == "Emma")
+        studentScores = emmaScores;
+
+    else if (currentStudent == "Logan")
+        studentScores = loganScores;
+
+    else if (currentStudent == "Becky")
+        studentScores = beckyScores;
+
+    else if (currentStudent == "Chris")
+        studentScores = chrisScores;
+
+    else if (currentStudent == "Eric")
+        studentScores = ericScores;
+
+    else if (currentStudent == "Gregor")
+        studentScores = gregorScores;
+
     else
-        Console.WriteLine("F");
+        continue;
+
+    // Inicializa a soma das notas das tarefas/exames
+    int sumAssignmentScores = 0;
+
+    // Inicializa a média atual do aluno
+    decimal currentStudentGrade = 0;
+
+    // Inicializa ou reseta o contador de tarefas avaliadas
+    int gradedAssignments = 0;
+
+    // Loop para somar as notas do aluno
+    foreach (int score in studentScores)
+    {
+        // Incrementa o contador de tarefas/exames
+        gradedAssignments += 1;
+
+        if (gradedAssignments <= examAssignments)
+            // Adiciona a pontuação do exame à soma
+            sumAssignmentScores += score;
+        else
+            // Adiciona os pontos de crédito extra - bônus igual a 10% da pontuação do exame
+            sumAssignmentScores += score / 10;
+    }
+
+    // Calcula a média do aluno
+    currentStudentGrade = (decimal)sumAssignmentScores / examAssignments;
+
+    // Atribui a letra correspondente à nota com base na média
+    if (currentStudentGrade >= 97)
+        currentStudentLetterGrade = "A+";
+
+    else if (currentStudentGrade >= 93)
+        currentStudentLetterGrade = "A";
+
+    else if (currentStudentGrade >= 90)
+        currentStudentLetterGrade = "A-";
+
+    else if (currentStudentGrade >= 87)
+        currentStudentLetterGrade = "B+";
+
+    else if (currentStudentGrade >= 83)
+        currentStudentLetterGrade = "B";
+
+    else if (currentStudentGrade >= 80)
+        currentStudentLetterGrade = "B-";
+
+    else if (currentStudentGrade >= 77)
+        currentStudentLetterGrade = "C+";
+
+    else if (currentStudentGrade >= 73)
+        currentStudentLetterGrade = "C";
+
+    else if (currentStudentGrade >= 70)
+        currentStudentLetterGrade = "C-";
+
+    else if (currentStudentGrade >= 67)
+        currentStudentLetterGrade = "D+";
+
+    else if (currentStudentGrade >= 63)
+        currentStudentLetterGrade = "D";
+
+    else if (currentStudentGrade >= 60)
+        currentStudentLetterGrade = "D-";
+    else
+        currentStudentLetterGrade = "F";
+
+    // Exibe o nome do aluno, a média e a letra correspondente à nota
+    Console.WriteLine($"{currentStudent}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}");
 }
 
-// Mensagem para continuar
 Console.WriteLine("Press the Enter key to continue");
 Console.ReadLine();

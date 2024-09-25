@@ -12,3 +12,4 @@ C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\obj\Debug\net8.0\refint\stude
 C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\obj\Debug\net8.0\studentNotas.pdb
 C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\obj\Debug\net8.0\studentNotas.genruntimeconfig.cache
 C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\obj\Debug\net8.0\ref\studentNotas.dll
+C:\Users\nivah\OneDrive\Documentos\C#\studentNotas\obj\Debug\net8.0\studentNotas.sourcelink.json
